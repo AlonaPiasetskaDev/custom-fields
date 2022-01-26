@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="select-panel">
+    <button class="btn btn-outline-success" (click)="toggle()">
+      {{ title }}
+    </button>
+  </div>
+  <ng-container *ngIf="show">
+    <ul>
+      <li *ngFor="let item of items; index as i" (click)="setOption(item)">
+        {{ item }}
+      </li>
+    </ul>
+  </ng-container>
+</div>

@@ -1,0 +1,19 @@
+.container {
+  margin: 0 auto;
+  p {
+    margin: 10px 20%;
+  }
+  div {
+    margin: 5px auto;
+    padding: 0.4rem 0.75rem;
+    width: 60%;
+    min-height: 200px;
+    border: 1px solid lightgray;
+    border-radius: 0.25rem;
+  }
+  div.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}

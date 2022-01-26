@@ -1,0 +1,25 @@
+.container {
+  margin: 50px auto;
+  form {
+    .form-group {
+      margin: 0 auto;
+      input {
+        width: 60%;
+        margin: 10px auto 0 auto;
+      }
+      textarea {
+        width: 60%;
+        margin: 10px auto 0 auto;
+      }
+
+      .text-danger {
+        margin: 20%;
+      }
+    }
+    .form-group .container {
+      span {
+        margin: 0 auto;
+      }
+    }
+  }
+}

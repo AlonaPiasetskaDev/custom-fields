@@ -1,0 +1,16 @@
+.container {
+  width: 60%;
+  margin: 0 auto;
+  p {
+  }
+  ul {
+    margin: 15px 0;
+    list-style-type: none;
+  }
+
+  li.selected-star label {
+    svg {
+      fill: red;
+    }
+  }
+}

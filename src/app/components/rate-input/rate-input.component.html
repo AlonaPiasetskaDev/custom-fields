@@ -1,0 +1,19 @@
+<div class="container">
+  <p>{{ label }}:</p>
+  <ul class="list-group list-group-horizontal">
+    <li
+      class="star list-group-item"
+      *ngFor="let star of [0, 1, 2, 3, 4]; index as i"
+      (click)="setStar(i)"
+      [class.selected-star]="i + 1 <= value"
+    >
+      <label>
+        <svg height="25" width="25" class="star rating">
+          <polygon
+            points="9.9, 1.1, 3.3, 21.78, 19.8, 8.58, 0, 8.58, 16.5, 21.78"
+          />
+        </svg>
+      </label>
+    </li>
+  </ul>
+</div>

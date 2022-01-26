@@ -1,0 +1,33 @@
+.container {
+  width: 200px;
+  position: relative;
+  z-index: 1;
+
+  .select-panel {
+    width: 100%;
+    min-height: 25px;
+    button {
+      width: 200px;
+    }
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    border-radius: 0.25rem;
+    width: 200px;
+    position: absolute;
+    z-index: 2;
+    li {
+      padding: 5px 10px;
+      width: 100%;
+      min-height: 25px;
+      background-color: #fff;
+
+      &:hover {
+        background-color: #f8f9fa;
+        cursor: pointer;
+      }
+    }
+  }
+}

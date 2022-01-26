@@ -1,0 +1,109 @@
+<div class="container container-form">
+  <form
+    action=""
+    [formGroup]="reviewForm"
+    (ngSubmit)="onSubmit()"
+    (blur)="logValidationErrors()"
+  >
+    <div class="form-group">
+      <input
+        formControlName="email"
+        type="email"
+        class="form-control"
+        placeholder="Your email..."
+        (blur)="logValidationErrors()"
+      />
+      <span
+        class="text-danger"
+        *ngIf="
+          reviewForm.controls['email'].invalid &&
+          reviewForm.controls['email'].errors
+        "
+      >
+        {{
+          reviewForm.controls["email"].value === ""
+            ? validationMessages["email"].required
+            : validationMessages["email"].pattern
+        }}
+      </span>
+    </div>
+    <div class="form-group">
+      <input
+        formControlName="name"
+        type="text"
+        class="form-control"
+        placeholder="Your name..."
+        (blur)="logValidationErrors()"
+      />
+      <span
+        class="text-danger"
+        *ngIf="
+          reviewForm.controls['name'].invalid &&
+          reviewForm.controls['name'].errors
+        "
+      >
+        {{
+          reviewForm.controls["name"].value === ""
+            ? validationMessages["name"].required
+            : validationMessages["name"].pattern
+        }}
+      </span>
+    </div>
+    <div class="form-group">
+      <textarea
+        formControlName="comment"
+        type="text"
+        class="form-control"
+        placeholder="Your review..."
+        (blur)="logValidationErrors()"
+      ></textarea>
+    </div>
+    <div class="form-group">
+      <app-rate-input
+        formControlName="rateItem"
+        label="Rate purchase quality"
+      ></app-rate-input>
+    </div>
+    <div class="form-group">
+      <app-rate-input
+        formControlName="rateService"
+        label="Rate service quality"
+      ></app-rate-input>
+    </div>
+    <div class="form-group">
+      <app-rate-input
+        formControlName="rateDelivery"
+        label="Rate delivery quality"
+        [id]="'rateDelivery'"
+      ></app-rate-input>
+    </div>
+    <div class="form-group">
+      <app-textarea-expanded
+        label="Custom comment"
+        formControlName="customComment"
+        (blur)="logValidationErrors()"
+      ></app-textarea-expanded>
+      <span
+      class="text-danger"
+      *ngIf="
+        reviewForm.controls['customComment'].invalid &&
+        reviewForm.controls['customComment'].errors
+      "
+    >
+      {{
+        reviewForm.controls["customComment"].value === ""
+          ? validationMessages["customComment"].required
+          : validationMessages["customComment"].pattern
+      }}
+    </span>
+    </div>
+    <div class="form-group">
+      <app-custom-select
+        formControlName="selectedSpaceship"
+        (blur)="logValidationErrors()"
+      ></app-custom-select>
+    </div>
+  </form>
+  <button class="btn btn-success" [disabled]="!reviewForm.valid">Submit</button>
+  <pre>{{ reviewForm.value | json }}</pre>
+</div>
